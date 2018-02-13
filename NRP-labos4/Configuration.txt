@@ -1,0 +1,94 @@
+CreateTraining: width:9,height:9,type:RGB
+Input: image:CutPictures/apple/apple0.jpg, identity:fear
+Input: image:CutPictures/apple/apple1.jpg, identity:kiss
+Input: image:CutPictures/apple/apple2.jpg, identity:wow
+Input: image:CutPictures/apple/apple3.jpg, identity:tears
+Input: image:CutPictures/apple/apple4.jpg, identity:grinning
+Input: image:CutPictures/apple/apple5.jpg, identity:crying
+Input: image:CutPictures/apple/apple6.jpg, identity:neutral
+Input: image:CutPictures/apple/apple7.jpg, identity:smiling
+Input: image:CutPictures/apple/apple8.jpg, identity:devil
+Input: image:CutPictures/apple/apple9.jpg, identity:sunglasses
+Input: image:CutPictures/facebook/facebook0.jpg, identity:fear
+Input: image:CutPictures/facebook/facebook1.jpg, identity:kiss
+Input: image:CutPictures/facebook/facebook2.jpg, identity:wow
+Input: image:CutPictures/facebook/facebook3.jpg, identity:tears
+Input: image:CutPictures/facebook/facebook4.jpg, identity:grinning
+Input: image:CutPictures/facebook/facebook5.jpg, identity:crying
+Input: image:CutPictures/facebook/facebook6.jpg, identity:neutral
+Input: image:CutPictures/facebook/facebook7.jpg, identity:smiling
+Input: image:CutPictures/facebook/facebook8.jpg, identity:devil
+Input: image:CutPictures/facebook/facebook9.jpg, identity:sunglasses
+Input: image:CutPictures/htc/htc0.jpg, identity:fear
+Input: image:CutPictures/htc/htc1.jpg, identity:kiss
+Input: image:CutPictures/htc/htc2.jpg, identity:wow
+Input: image:CutPictures/htc/htc3.jpg, identity:tears
+Input: image:CutPictures/htc/htc4.jpg, identity:grinning
+Input: image:CutPictures/htc/htc5.jpg, identity:crying
+Input: image:CutPictures/htc/htc6.jpg, identity:neutral
+Input: image:CutPictures/htc/htc7.jpg, identity:smiling
+Input: image:CutPictures/htc/htc8.jpg, identity:devil
+Input: image:CutPictures/htc/htc9.jpg, identity:sunglasses
+Input: image:CutPictures/lg/lg0.jpg, identity:fear
+Input: image:CutPictures/lg/lg1.jpg, identity:kiss
+Input: image:CutPictures/lg/lg2.jpg, identity:wow
+Input: image:CutPictures/lg/lg3.jpg, identity:tears
+Input: image:CutPictures/lg/lg4.jpg, identity:grinning
+Input: image:CutPictures/lg/lg5.jpg, identity:crying
+Input: image:CutPictures/lg/lg6.jpg, identity:neutral
+Input: image:CutPictures/lg/lg7.jpg, identity:smiling
+Input: image:CutPictures/lg/lg8.jpg, identity:devil
+Input: image:CutPictures/lg/lg9.jpg, identity:sunglasses
+Input: image:CutPictures/messenger/messenger0.jpg, identity:fear
+Input: image:CutPictures/messenger/messenger1.jpg, identity:kiss
+Input: image:CutPictures/messenger/messenger2.jpg, identity:wow
+Input: image:CutPictures/messenger/messenger3.jpg, identity:tears
+Input: image:CutPictures/messenger/messenger4.jpg, identity:grinning
+Input: image:CutPictures/messenger/messenger5.jpg, identity:crying
+Input: image:CutPictures/messenger/messenger6.jpg, identity:neutral
+Input: image:CutPictures/messenger/messenger7.jpg, identity:smiling
+Input: image:CutPictures/messenger/messenger8.jpg, identity:devil
+Input: image:CutPictures/messenger/messenger9.jpg, identity:sunglasses
+Input: image:CutPictures/microsoft/microsoft0.jpg, identity:fear
+Input: image:CutPictures/microsoft/microsoft1.jpg, identity:kiss
+Input: image:CutPictures/microsoft/microsoft2.jpg, identity:wow
+Input: image:CutPictures/microsoft/microsoft3.jpg, identity:tears
+Input: image:CutPictures/microsoft/microsoft4.jpg, identity:grinning
+Input: image:CutPictures/microsoft/microsoft5.jpg, identity:crying
+Input: image:CutPictures/microsoft/microsoft6.jpg, identity:neutral
+Input: image:CutPictures/microsoft/microsoft7.jpg, identity:smiling
+Input: image:CutPictures/microsoft/microsoft8.jpg, identity:devil
+Input: image:CutPictures/microsoft/microsoft9.jpg, identity:sunglasses
+Input: image:CutPictures/samsung/samsung0.jpg, identity:fear
+Input: image:CutPictures/samsung/samsung1.jpg, identity:kiss
+Input: image:CutPictures/samsung/samsung2.jpg, identity:wow
+Input: image:CutPictures/samsung/samsung3.jpg, identity:tears
+Input: image:CutPictures/samsung/samsung4.jpg, identity:grinning
+Input: image:CutPictures/samsung/samsung5.jpg, identity:crying
+Input: image:CutPictures/samsung/samsung6.jpg, identity:neutral
+Input: image:CutPictures/samsung/samsung7.jpg, identity:smiling
+Input: image:CutPictures/samsung/samsung8.jpg, identity:devil
+Input: image:CutPictures/samsung/samsung9.jpg, identity:sunglasses
+Input: image:CutPictures/twitter/twitter0.jpg, identity:fear
+Input: image:CutPictures/twitter/twitter1.jpg, identity:kiss
+Input: image:CutPictures/twitter/twitter2.jpg, identity:wow
+Input: image:CutPictures/twitter/twitter3.jpg, identity:tears
+Input: image:CutPictures/twitter/twitter4.jpg, identity:grinning
+Input: image:CutPictures/twitter/twitter5.jpg, identity:crying
+Input: image:CutPictures/twitter/twitter6.jpg, identity:neutral
+Input: image:CutPictures/twitter/twitter7.jpg, identity:smiling
+Input: image:CutPictures/twitter/twitter8.jpg, identity:devil
+Input: image:CutPictures/twitter/twitter9.jpg, identity:sunglasses
+Network: hidden1:50, hidden2:0
+Train: Mode:GUI, Minutes:0, StrategyError:0.2, StrategyCycles:100
+Whatis: image:trainingPictures/apple.jpg
+Whatis: image:trainingPictures/facebook.jpg
+Whatis: image:trainingPictures/htc.jpg
+Whatis: image:trainingPictures/lg.jpg
+Whatis: image:trainingPictures/messenger.jpg
+Whatis: image:trainingPictures/microsoft.jpg
+Whatis: image:trainingPictures/samsung.jpg
+Whatis: image:trainingPictures/twitter.jpg
+Whatis: image:untrainedPictures/whatsapp.jpg
+Whatis: image:untrainedPictures/emojione.jpg
+Whatis: image:untrainedPictures/google.jpg

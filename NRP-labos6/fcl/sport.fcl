@@ -1,0 +1,98 @@
+FUNCTION_BLOCK sportovi
+
+VAR_INPUT
+	razinaAktivnosti : REAL;
+	brojSuigraca : REAL;
+	temperatura : REAL;
+	strahOdVisine : REAL;
+	cijena : REAL;
+	znanjePlivanja : REAL;
+END_VAR
+
+VAR_OUTPUT
+	decision : REAL;
+END_VAR
+
+FUZZIFY razinaAktivnosti
+	TERM niska := (0, 1.0) (3, 1.0) (4, 0.0);
+	TERM srednja := TRAPE 3 5 6 8;
+	TERM visoka := (7, 0.0) (8, 1.0) (10, 1.0);
+
+END_FUZZIFY
+
+FUZZIFY brojSuigraca
+	TERM mali := (0, 1.0) (3, 0.0);
+	TERM srednji := TRAPE 2 3 5 6;
+	TERM veliki := (5, 0.0) (6, 1.0) (20, 1.0);
+END_FUZZIFY
+
+FUZZIFY temperatura
+	TERM jakoNiska := (-10, 1.0) (5, 1.0) (10, 0.0);
+	TERM niska := TRAPE 5 10 13 15;
+	TERM srednja := TRAPE 14 17 24 26;
+	TERM visoka := TRAPE 25 28 32 34;
+	TERM jakoVisoka := (33, 0.0) (35, 1.0) (45, 1.0);
+END_FUZZIFY
+
+FUZZIFY strahOdVisine
+	TERM mali := (0, 1.0) (3, 1.0) (4, 0.0);
+	TERM srednji := TRAPE 3 4 6 7;
+	TERM veliki := (6, 0.0) (7, 1.0) (10, 1.0);
+END_FUZZIFY
+
+FUZZIFY cijena
+	TERM niska := (0, 1.0) (3, 1.0) (5, 0.0);
+	TERM srednja := TRAPE 3 5 6 8;
+	TERM visoka := (6, 0.0) (8, 1.0) (10, 1.0);
+END_FUZZIFY
+
+FUZZIFY znanjePlivanja
+	TERM lose := (0, 1.0) (3, 1.0) (4, 0.0);
+	TERM dobro := TRAPE 3 4 6 7;
+	TERM odlicno := (6, 0.0) (8, 1.0) (10, 1.0);
+END_FUZZIFY
+
+DEFUZZIFY decision
+	 TERM nogomet := TRAPE 0 3 7 10;
+	 TERM ples := TRAPE 10 13 17 20;
+	 TERM sah := TRAPE 20 23 27 30;
+	 TERM plivanje := TRAPE 30 33 37 40;
+	 TERM penjanjeNaStijene := TRAPE 40 43 47 50;
+	 TERM skijanje := TRAPE 50 53 57 60;
+	 METHOD : LM;
+	 DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK pravilaSporta
+
+AND : MIN;
+OR : MAX;
+ACT : MIN;
+ACCU : MAX;
+
+RULE 1 : IF temperatura IS jakoNiska THEN decision IS skijanje WITH 0.5;
+
+RULE 2 : IF cijena IS NOT niska THEN decision IS skijanje;
+
+RULE 3: IF razinaAktivnosti IS niska THEN decision IS sah WITH 0.7;
+
+RULE 4: IF brojSuigraca IS mali THEN decision IS sah WITH 0.5;
+
+RULE 5: IF razinaAktivnosti IS visoka AND brojSuigraca IS veliki THEN decision IS nogomet;
+
+RULE 6: IF znanjePlivanja IS NOT lose THEN decision IS plivanje WITH 0.6;
+
+RULE 7: IF razinaAktivnosti IS srednja THEN decision IS ples WITH 0.5;
+
+RULE 8: IF brojSuigraca IS mali OR brojSuigraca IS srednji THEN decision IS ples WITH 0.5;
+
+RULE 9: IF strahOdVisine IS mali THEN decision IS penjanjeNaStijene WITH 0.5;
+
+RULE 10: IF razinaAktivnosti IS visoka THEN decision IS penjanjeNaStijene;
+
+RULE 11: IF temperatura IS srednja OR temperatura IS visoka OR temperatura IS jakoVisoka THEN decision IS plivanje WITH 0.6;
+
+RULE 12: IF strahOdVisine IS NOT veliki THEN decision IS skijanje WITH 0.5;
+
+END_RULEBLOCK
+END_FUNCTION_BLOCK
